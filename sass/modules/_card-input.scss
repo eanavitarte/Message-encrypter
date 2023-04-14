@@ -1,0 +1,73 @@
+@import 'variables';
+
+.card-input{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+    &.another-class{
+        display: grid;
+    }
+    textarea {
+        appearance: none;
+        border: none;
+        resize: none;
+        outline: none;
+        background-color: transparent;
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+
+        overflow: scroll;
+        overflow-x: auto; /* Habilita el scroll horizontal */
+        overflow-y: auto; /* Habilita el scroll vertical */
+
+
+        width: 100%;
+        &::placeholder{
+            color: var(--alura-color);
+            transition: all 1s ease;
+            font-size: 2rem;
+        }
+    }
+    table{
+        border:none;
+        tr{
+            border: 2px #000 solid;
+            border-radius: .5rem;
+            th{
+                border-radius: .5rem;
+            }
+        }
+    }
+    .encrypter-buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        button{
+            border-radius: .5rem;
+            padding: 0 2rem;
+            margin: 0 auto;
+            width: 100%;
+    
+            color: var(--button-color);
+            font-size: 2rem;
+            font-weight:400;
+            background-color: var(--white);
+
+            &:hover{
+                color: var(--white);
+                background-color: var(--black);
+                transition: all .5s ease;
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width:768px) {
+    .card-input{
+        .encrypter-buttons{
+            flex-direction: row;
+        }
+    }
+}

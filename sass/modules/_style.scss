@@ -1,0 +1,88 @@
+@import "variables";
+// GENERAL STYLES
+
+* {
+  // RESET STYLES
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  //   outline: green solid 2px;
+
+  font-family: $primary-font;
+  html {
+    font-size: 62.5%;
+  }
+  body{
+    background-color: var(--primary-color);
+    color: var(--black);
+    transition: all 2s ease;
+  }
+
+  .button {
+    padding: 0.2rem 1.5rem;
+    border-radius: 0.9rem;
+    font-size: 1.1rem;
+
+    background-color: var(--white);
+    color: var(--black);
+    border: 2px solid var(--black);
+  }
+  .pd {
+    padding: 0.5rem 5%;
+  }
+  .none {
+    display: none;
+  }
+  .check {
+    position: relative;
+    bottom: 15%;
+    width: 45px;
+    &::before {
+      content: "";
+      position: absolute;
+
+      width: 50px;
+      height: 26px; // 25
+
+      background-color: var(--toggles);
+      border-radius: 25px;
+
+      transition: all .5s ease;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+
+      width: 28px;
+      height: 28px;
+
+      background-color: white;
+
+      border-radius: 25px;
+      border: 2px solid #333;
+
+      box-sizing: border-box;
+
+      transition: 0.5s ease all;
+    }
+    &:checked::after {
+      transform: translateX(25px);
+      border: 2px solid rgba(70, 130, 256, 1);
+    }
+    &:checked::before {
+      background: rgba(70, 130, 256, 1);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.6rem;
+  }
+}

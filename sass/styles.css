@@ -1,0 +1,410 @@
+:root {
+  --primary-color: white;
+  --secondary-color: #19BDE6;
+  --white:#fff;
+  --black:#000;
+  --alura-color:#0A3871;
+  --button-color:#4D8E9E;
+  --accessibility-color:black;
+  --header-color:white;
+  --header-image:unset;
+  --header-text:#0A3871;
+  --toggles:#333;
+}
+
+[data-theme=dark] {
+  --primary-color: black;
+  --secondary-color: #213135;
+  --white:black;
+  --black:white;
+  --alura-color:#1980ff;
+  --button-color:#177fff;
+  --accessibility-color:rgb(43, 43, 43);
+  --header-color:rgb(43, 43, 43);
+  --header-img:saturate(100);
+  --header-text:#19BDE6;
+  --toggles:black;
+  transition: all 0.5s ease;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+* html {
+  font-size: 62.5%;
+}
+* body {
+  background-color: var(--primary-color);
+  color: var(--black);
+  transition: all 2s ease;
+}
+* .button {
+  padding: 0.2rem 1.5rem;
+  border-radius: 0.9rem;
+  font-size: 1.1rem;
+  background-color: var(--white);
+  color: var(--black);
+  border: 2px solid var(--black);
+}
+* .pd {
+  padding: 0.5rem 5%;
+}
+* .none {
+  display: none;
+}
+* .check {
+  position: relative;
+  bottom: 15%;
+  width: 45px;
+}
+* .check::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 26px;
+  background-color: var(--toggles);
+  border-radius: 25px;
+  transition: all 0.5s ease;
+}
+* .check::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background-color: white;
+  border-radius: 25px;
+  border: 2px solid #333;
+  box-sizing: border-box;
+  transition: 0.5s ease all;
+}
+* .check:checked::after {
+  transform: translateX(25px);
+  border: 2px solid rgb(70, 130, 255);
+}
+* .check:checked::before {
+  background: rgb(70, 130, 255);
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+:root {
+  --primary-color: white;
+  --secondary-color: #19BDE6;
+  --white:#fff;
+  --black:#000;
+  --alura-color:#0A3871;
+  --button-color:#4D8E9E;
+  --accessibility-color:black;
+  --header-color:white;
+  --header-image:unset;
+  --header-text:#0A3871;
+  --toggles:#333;
+}
+
+[data-theme=dark] {
+  --primary-color: black;
+  --secondary-color: #213135;
+  --white:black;
+  --black:white;
+  --alura-color:#1980ff;
+  --button-color:#177fff;
+  --accessibility-color:rgb(43, 43, 43);
+  --header-color:rgb(43, 43, 43);
+  --header-img:saturate(100);
+  --header-text:#19BDE6;
+  --toggles:black;
+  transition: all 0.5s ease;
+}
+
+header {
+  transition: all 2s ease;
+  font-size: 1rem;
+  background-color: var(--header-color);
+  color: var(--header-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img {
+  height: 1.9rem;
+  width: 1.5rem;
+  filter: var(--header-img);
+}
+header .logo {
+  display: flex;
+  gap: 0.5rem;
+}
+header .logo span {
+  display: none;
+  font-size: 1.2rem;
+  color: var(--header-text);
+}
+header .accessibility {
+  display: flex;
+  gap: 4rem;
+}
+header .accessibility button:hover {
+  color: var(--white);
+  background-color: var(--black);
+  transition: all 0.5s ease;
+}
+header .accessibility .darkmode {
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  grid: "A B C"/1fr 1fr 1fr;
+  transform: translateX(-50%);
+  position: fixed;
+  left: 50%;
+  bottom: 6%;
+  width: 230px;
+}
+header .accessibility .translate {
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  grid: "A B C"/1fr 1fr 1fr;
+  transform: translateX(-50%);
+  left: 50%;
+  position: fixed;
+  bottom: 2%;
+  width: 230px;
+}
+header .accessibility .darkmode, header .accessibility .translate {
+  z-index: 20;
+}
+header .accessibility .darkmode span, header .accessibility .translate span {
+  color: #fff;
+}
+header .accessibility .bg {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0%;
+  width: 100vw;
+  height: 12vh;
+  background-color: var(--accessibility-color);
+  transition: all 0.5s ease;
+  z-index: 10;
+}
+
+@media screen and (min-width: 425px) {
+  header .logo span {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .encrypter {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 0.5rem;
+  }
+}
+:root {
+  --primary-color: white;
+  --secondary-color: #19BDE6;
+  --white:#fff;
+  --black:#000;
+  --alura-color:#0A3871;
+  --button-color:#4D8E9E;
+  --accessibility-color:black;
+  --header-color:white;
+  --header-image:unset;
+  --header-text:#0A3871;
+  --toggles:#333;
+}
+
+[data-theme=dark] {
+  --primary-color: black;
+  --secondary-color: #213135;
+  --white:black;
+  --black:white;
+  --alura-color:#1980ff;
+  --button-color:#177fff;
+  --accessibility-color:rgb(43, 43, 43);
+  --header-color:rgb(43, 43, 43);
+  --header-img:saturate(100);
+  --header-text:#19BDE6;
+  --toggles:black;
+  transition: all 0.5s ease;
+}
+
+.card-input {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+.card-input.another-class {
+  display: grid;
+}
+.card-input textarea {
+  appearance: none;
+  border: none;
+  resize: none;
+  outline: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  overflow: scroll;
+  overflow-x: auto; /* Habilita el scroll horizontal */
+  overflow-y: auto; /* Habilita el scroll vertical */
+  width: 100%;
+}
+.card-input textarea::placeholder {
+  color: var(--alura-color);
+  transition: all 1s ease;
+  font-size: 2rem;
+}
+.card-input table {
+  border: none;
+}
+.card-input table tr {
+  border: 2px #000 solid;
+  border-radius: 0.5rem;
+}
+.card-input table tr th {
+  border-radius: 0.5rem;
+}
+.card-input .encrypter-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card-input .encrypter-buttons button {
+  border-radius: 0.5rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+  width: 100%;
+  color: var(--button-color);
+  font-size: 2rem;
+  font-weight: 400;
+  background-color: var(--white);
+}
+.card-input .encrypter-buttons button:hover {
+  color: var(--white);
+  background-color: var(--black);
+  transition: all 0.5s ease;
+}
+
+@media screen and (min-width: 768px) {
+  .card-input .encrypter-buttons {
+    flex-direction: row;
+  }
+}
+:root {
+  --primary-color: white;
+  --secondary-color: #19BDE6;
+  --white:#fff;
+  --black:#000;
+  --alura-color:#0A3871;
+  --button-color:#4D8E9E;
+  --accessibility-color:black;
+  --header-color:white;
+  --header-image:unset;
+  --header-text:#0A3871;
+  --toggles:#333;
+}
+
+[data-theme=dark] {
+  --primary-color: black;
+  --secondary-color: #213135;
+  --white:black;
+  --black:white;
+  --alura-color:#1980ff;
+  --button-color:#177fff;
+  --accessibility-color:rgb(43, 43, 43);
+  --header-color:rgb(43, 43, 43);
+  --header-img:saturate(100);
+  --header-text:#19BDE6;
+  --toggles:black;
+  transition: all 0.5s ease;
+}
+
+.card-output {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 2px solid var(--black);
+  background-color: var(--white);
+  transition: all 0.5s ease;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.4rem;
+  margin: 4rem 0 15vh 0;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.0784313725);
+}
+.card-output img {
+  width: 100%;
+}
+.card-output textarea {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+@media screen and (min-width: 1024px) {
+  .card-output {
+    margin: 4rem 0 0;
+  }
+  .card-output img {
+    display: block;
+  }
+}
+#popUpDictionary {
+  margin: auto;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  background-color: var(--white);
+  color: var(--black);
+}
+#popUpDictionary .popUpText {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+}
+#popUpDictionary .popUpText img {
+  height: 1.5rem;
+}
+#popUpDictionary #popUpContent {
+  margin-bottom: 2rem;
+}
+#popUpDictionary #popUpContent ul {
+  list-style: none;
+}
+#popUpDictionary #popUpContent ul li {
+  display: flex;
+}
+#popUpDictionary #popUpContent ul li input {
+  width: 100%;
+  background-color: var(--white);
+  color: var(--black);
+}
+#popUpDictionary .popUpButtons {
+  display: flex;
+  justify-content: space-between;
+}
+#popUpDictionary .popUpButtons button {
+  background-color: var(--white);
+  color: var(--black);
+  border: 2px solid var(--black);
+  padding: 0.2rem 1rem;
+  border-radius: 0.7rem;
+}
+#popUpDictionary .popUpButtons button:hover {
+  background-color: var(--black);
+  color: var(--white);
+  transition: all 0.5s ease;
+}
+
+/*# sourceMappingURL=styles.css.map */

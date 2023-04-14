@@ -1,0 +1,11 @@
+{
+  "name": "challenge-01",
+  "version": "1.0.0",
+  "scripts": {
+    "sassCo": "npx sass --watch sass/main.scss dist/styles.css"
+  },
+  "devDependencies": {
+    "sass": "^1.62.0",
+    "typescript": "^5.0.4"
+  }
+}
