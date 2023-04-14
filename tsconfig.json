@@ -3,6 +3,15 @@
 		"module": "es2022",
 		"target": "es2022",
 		"rootDir": "./app",
-		"outDir": "./dist"
+		"outDir": "./dist",
+
+		/* Stricts */
+		"strict": true,
+		"noImplicitAny": false,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"strictPropertyInitialization": true,
+		"noImplicitThis": true
 	}
 }

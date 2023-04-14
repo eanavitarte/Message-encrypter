@@ -14,6 +14,23 @@
     font-size: 62.5%;
   }
 
+  .button {
+    padding: 0.2rem 1.5rem;
+    border-radius: 0.9rem;
+    font-size: 1.1rem;
+
+    background-color: var(--white);
+    color: var(--black);
+    border: 2px solid var(--black);
+  }
+  .pd {
+    padding: 0.5rem 5%;
+  }
+  .none {
+    display: none;
+  }
+}
+
 body {
 	background-color: var(--primary-color);
 	color: var(--black);
@@ -39,61 +56,46 @@ body {
 	}
 }
 
-  .button {
-    padding: 0.2rem 1.5rem;
-    border-radius: 0.9rem;
-    font-size: 1.1rem;
+.check {
+	width: 50px;
+	&::before {
+		content: "";
+		position: absolute;
 
-    background-color: var(--white);
-    color: var(--black);
-    border: 2px solid var(--black);
-  }
-  .pd {
-    padding: 0.5rem 5%;
-  }
-  .none {
-    display: none;
-  }
-  .check {
-    position: relative;
-    bottom: 15%;
-    width: 45px;
-    &::before {
-      content: "";
-      position: absolute;
+		width: 50px;
+		height: 26px; // 25
 
-      width: 50px;
-      height: 26px; // 25
+		background-color: var(--toggles);
+		border-radius: 25px;
 
-      background-color: var(--toggles);
-      border-radius: 25px;
+		transition: all .5s ease;
+	}
+	
+	&::after {
+		content: "";
+		position: absolute;
 
-      transition: all .5s ease;
-    }
-    &::after {
-      content: "";
-      position: absolute;
+		width: 28px;
+		height: 28px;
 
-      width: 28px;
-      height: 28px;
+		background-color: white;
 
-      background-color: white;
+		border-radius: 25px;
+		border: 2px solid #333;
 
-      border-radius: 25px;
-      border: 2px solid #333;
+		box-sizing: border-box;
 
-      box-sizing: border-box;
+		transition: 0.5s ease all;
+	}
+	
+	&:checked::after {
+		transform: translateX(25px);
+		border: 2px solid rgba(70, 130, 256, 1);
+	}
 
-      transition: 0.5s ease all;
-    }
-    &:checked::after {
-      transform: translateX(25px);
-      border: 2px solid rgba(70, 130, 256, 1);
-    }
-    &:checked::before {
-      background: rgba(70, 130, 256, 1);
-    }
-  }
+	&:checked::before {
+		background: rgba(70, 130, 256, 1);
+	}
 }
 
 @media screen and (min-width: 768px) {

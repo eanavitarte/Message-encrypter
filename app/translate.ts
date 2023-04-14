@@ -1,35 +1,44 @@
-import { lang, wordComponent, getLanguage } from './constants.js';
+import { wordComponent } from './constants.js';
 import { words } from './language.js';
+
+const langs = ["es", "en"] as const
+type Lang = typeof langs[number]
 
 const changeLangBtn = document.querySelector('input#tslChecking') as HTMLInputElement
 
-function insertLangText(content: wordComponent, language: lang){
-    if(content.type === 'placeholder'){
-        const element = document.querySelector(`[data-lang="${content.data}"]`) as HTMLTextAreaElement;
-        element.placeholder = language === lang.es ? content.es : content.en
+function insertLangText(content: wordComponent, language: Lang){
+    const {type, data, en, es} = content
+    if(type === 'placeholder'){
+        const element = document.querySelector(`[data-lang="${data}"]`) as HTMLTextAreaElement;
+        element.placeholder = language === "es" ? es : en
     }
-    else if(content.type === 'inner'){
-        const element = document.querySelector(`[data-lang="${content.data}"]`) as HTMLElement;
-        element.innerText = language === lang.es ? content.es : content.en
+    else if(type === 'inner'){
+        const element = document.querySelector(`[data-lang="${data}"]`) as HTMLElement;
+        element.innerText = language === "es" ? es : en
     }
 }
 
-function reloadLang(la: lang){
+function reloadLang(language: Lang){
     Object.keys(words).forEach(key => {
-        insertLangText(words[key], la)
+        insertLangText(words[key], language)
     })
 }
 
 function changeLang(value: boolean){
-    const langChange = value ? lang.es : lang.en 
+    const langChange = value ? "en" : "es"
     localStorage.setItem('lang', langChange)
     reloadLang(langChange)
 }
 
 (function (){
-    const currentLang = getLanguage()
-    changeLangBtn.checked = currentLang !== lang.en
-    reloadLang(currentLang)
+	const currentLang = document.documentElement.lang as Lang
+	changeLangBtn.checked = currentLang === "en"
+	if (
+        changeLangBtn.checked &&
+		langs.includes(currentLang)
+	) {
+		reloadLang(currentLang)
+	}
 })()
 
 changeLangBtn.addEventListener('change', () => changeLang(changeLangBtn.checked))

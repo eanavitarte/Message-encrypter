@@ -5,12 +5,6 @@ export const words = {
         'data': 'title',
         'type': 'inner'
     },
-    'mainTitle': {
-        'es': 'Reto 01 Grupo 5',
-        'en': 'Challenge 01 Group 5',
-        'data': 'main-title',
-        'type': 'inner'
-    },
     'dictBtn': {
         'es': 'Diccionario',
         'en': 'Dictionary',
@@ -24,7 +18,7 @@ export const words = {
         'type': 'placeholder'
     },
     'info': {
-        'es': 'Aqui SI puedes usar minúsculas/mayúsculas y tildes',
+        'es': 'Puedes usar minúsculas/mayúsculas y tildes',
         'en': 'You are allow to use lowercase/uppercase and mark accents',
         'data': 'info',
         'type': 'inner'
@@ -42,14 +36,14 @@ export const words = {
         'type': 'inner'
     },
     'cardText1': {
-        'es': 'Ningún mensaje fue encontrado',
+        'es': 'No hay mensajes',
         'en': 'Message not found',
         'data': 'card-text-1',
         'type': 'inner'
     },
     'cardText2': {
-        'es': 'Ingresa el texto que deseas encriptar o desencriptar.',
-        'en': 'Insert text are want encrypt or decrypt.',
+        'es': '¡Encripta algo y prueba!',
+        'en': 'Try encrypting something!',
         'data': 'card-text-2',
         'type': 'inner'
     },
@@ -59,14 +53,8 @@ export const words = {
         'data': 'copy-btn',
         'type': 'inner'
     },
-    'outputPlaceholder': {
-        'es': '',
-        'en': '',
-        'data': 'output-textarea',
-        'type': 'placeholder'
-    },
     'enInput': {
-        'es': 'Ingles',
+        'es': 'Inglés',
         'en': 'English',
         'data': 'en-input',
         'type': 'inner'
@@ -78,14 +66,14 @@ export const words = {
         'type': 'inner'
     },
     'darkInput': {
-        'es': 'Mode Oscuro',
-        'en': 'Dark Mode',
+        'es': 'Oscuro',
+        'en': 'Dark',
         'data': 'dark-input',
         'type': 'inner'
     },
     'lightInput': {
-        'es': 'Modo Claro',
-        'en': 'Light Mode',
+        'es': 'Claro',
+        'en': 'Light',
         'data': 'light-input',
         'type': 'inner'
     }

@@ -22,38 +22,48 @@ header{
             color: var(--header-text);
         }
     }
+    button{
+		&:hover{
+			color: var(--white);
+			background-color: var(--black);
+			transition: all .5s ease;
+		}
+	}
     .accessibility{
         display: flex;
         gap: 4rem;
-        button{
-            &:hover{
-                color: var(--white);
-                background-color: var(--black);
-                transition: all .5s ease;
-            }
-        }
+
+		@media screen and (max-width:820px) {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background: black;
+			flex-direction: column;
+			gap: 2ch;
+			padding: 1ch;
+		}
+
 		.darkmode{
-			display: grid;
-			justify-items: start;
-			align-items: center;
-			grid: "A B C"/1fr 1fr 1fr;
-			transform: translateX(-50%);
-			width: 230px;
+			display: flex;
+			justify-content: center;
+			gap: 2ch;
 		}
+
 		.translate{
-			display: grid;
-			justify-items: start;
-			align-items: center;
-			grid: "A B C"/1fr 1fr 1fr;
-			transform: translateX(-50%);
-			width: 230px;
+			display: flex;
+			justify-content: center;
+			gap: 2ch;
 		}
+
         .darkmode,.translate{
             z-index: 20;
+
             span{
                 color: $white;
             }
         }
+
         .bg{
             position:fixed;
             left: 50%;

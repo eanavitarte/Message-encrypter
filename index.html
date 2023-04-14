@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+	<!-- FONTS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
 
 
-    <!-- LINKED FILES -->
+	<!-- LINKED FILES -->
 
-    <link rel="stylesheet" href="dist/styles.css">
+	<link rel="stylesheet" href="dist/styles.css">
 
-    <script src="dist/constants.js" type="module"></script>
-    <script src="dist/language.js" type="module"></script>
-    
-    <script src="dist/app.js" type="module" defer></script>
-    <script src="dist/translate.js" type="module" defer></script>
-    <script src="dist/popUp.js" type="module" defer></script>
-    <script src="dist/theme.js" type="module" defer></script>
-    
-    <title data-lang="title">Encriptador Alura Challenge</title>
+	<script src="dist/constants.js" type="module"></script>
+	<script src="dist/language.js" type="module"></script>
+	
+	<script src="dist/app.js" type="module" defer></script>
+	<script src="dist/translate.js" type="module" defer></script>
+	<script src="dist/popUp.js" type="module" defer></script>
+	<script src="dist/theme.js" type="module" defer></script>
+	
+	<title data-lang="title">Encriptador Alura Challenge</title>
 </head>
 <body>
 	<header class="pd">
 		<div class="logo">
 			<img src="src/Logo-1.png" alt="Alura logo">
-			<span data-lang="main-title">Challenge 01 Grupo 5</span>
+			<span data-lang="main-title">Challenge 01 G5</span>
 		</div>
 		<button class="button" data-lang="dict-btn" id="buttonDictionary">Diccionario</button>
 		<div class="accessibility">
@@ -39,9 +39,9 @@
 				<span class="translate_span" id="english" data-lang="dark-input">Ligh</span>
 			</div>
 			<div class="translate">
-				<span class="translate_span" id="english" data-lang="en-input">Ingles</span>
-				<input type="checkbox" class="check" name="checking" id="tslChecking" placeholder="Check">
 				<span class="translate_span" id="spanish" data-lang="es-input">Español</span>
+				<input type="checkbox" class="check" name="checking" id="tslChecking" placeholder="Check">
+				<span class="translate_span" id="english" data-lang="en-input">Inglés</span>
 			</div>
 		</div>
 	</header>
@@ -54,7 +54,7 @@
                     rows="2"
                 ></textarea>
 				<div class="dictionaryWrapper">
-					<p>Diccionario actual:</p>
+					<p>Diccionario:</p>
 					<table border="1" id="dictionaryTable">
 						<tr>
 							<th>e</th>
@@ -78,19 +78,20 @@
 						</tr>
 					</table>
                 </div>
-                <div>
-                    <img src="src/bi_exclamation-circle-fill.png " alt="exclamation-icon">
-                    <span data-lang="info">Aqui SI puedes usar minúsculas/mayúsculas y tildes<span>
-                </div>
+
                 <div class="encrypter-buttons">
+					<div class="infoWrapper">
+						<img src="src/bi_exclamation-circle-fill.png " alt="exclamation-icon">
+						<span class="info" data-lang="info">Puedes usar minúsculas/mayúsculas y tildes<span>
+					</div>
                     <button class="button" id="encrypt" data-lang="encrypt-btn">Encriptar</button>
                     <button class="button" id="decrypt" data-lang="decrypt-btn">Desencriptar</button>
                 </div>
             </section>
             <section class="card-output">
                 <img class="none" id="munneco" src="src/Muñeco.png" alt="no found img">
-                <h3 data-lang="card-text-1" class="card-items">Ningún mensaje fue encontrado</h3>
-                <p data-lang="card-text-2" class="card-items">Ingresa el texto que deseas encriptar o desencriptar.</p>
+                <h3 data-lang="card-text-1" class="card-items">No hay mensajes</h3>
+                <p data-lang="card-text-2" class="card-items">¡Encripta algo y prueba!</p>
                 <textarea
                     data-lang="output-textarea"
                     name="output"
@@ -105,7 +106,7 @@
 	
     <dialog id="popUpDictionary">
         <div class="popUpText">
-            <img src="/src/icon-config.png" alt="config icon">
+            <img src="./src/icon-config.png" alt="config icon">
             <p>Cambia el diccionario actual</p>
         </div>
         <div id="popUpContent"></div>

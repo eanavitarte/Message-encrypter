@@ -1,3 +1,8 @@
+$basic-gap: 2vw;
+$whole-gapping: 3*2vw;
+$ipad-width: 820px;
+$motorola-width: 360px;
+$desktop-min-width: $ipad-width + $motorola-width + 1px;
 
 $white:#fff;
 $black:#000;

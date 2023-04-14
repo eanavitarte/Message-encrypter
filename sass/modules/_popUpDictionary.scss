@@ -1,31 +1,40 @@
 #popUpDictionary{
-    margin: auto;
-    padding: 2rem;
-    border-radius: .8rem;
-    background-color: var(--white);
-    color: var(--black);
-    .popUpText{
+	margin: auto;
+	padding: 2rem;
+	border-radius: .8rem;
+	background-color: var(--white);
+	color: var(--black);
+    
+	.popUpText {
         display: flex;
         justify-content: center;
         gap: .2rem;
+		align-items: center;
+		padding: 1ch 0;
+		
         img{
             height: 1.5rem;
         }
     }
-    #popUpContent{
-        ul{
-            list-style: none;
-            li{
-                display: flex;
-                input{
-                    width: 100%;
-                    background-color: var(--white);
-                    color: var(--black);
-                }
-            }
-        }
-        margin-bottom: 2rem;
-    }
+
+	#popUpContent{
+		ul{
+			list-style: none;
+			
+			li{
+				display: flex;
+
+				input{
+					width: 100%;
+					background-color: var(--white);
+					color: var(--black);
+					padding: 1ch;
+				}
+			}
+		}
+		margin-bottom: 2rem;
+	}
+	
     .popUpButtons{
         display: flex;
         justify-content: space-between;

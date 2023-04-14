@@ -36,25 +36,6 @@
 * html {
   font-size: 62.5%;
 }
-* body {
-  background-color: var(--primary-color);
-  color: var(--black);
-  transition: all 2s ease;
-  display: grid;
-  grid: "A" 10vh "B" 90vh;
-}
-* body main {
-  margin: 2vw;
-  flex-wrap: wrap;
-  display: flex;
-  gap: 2vw;
-}
-* body main section.card-input {
-  flex: 5 1 820px;
-}
-* body main section.card-output {
-  flex: 2 1 360px;
-}
 * .button {
   padding: 0.2rem 1.5rem;
   border-radius: 0.9rem;
@@ -69,12 +50,31 @@
 * .none {
   display: none;
 }
-* .check {
-  position: relative;
-  bottom: 15%;
-  width: 45px;
+
+body {
+  background-color: var(--primary-color);
+  color: var(--black);
+  transition: all 2s ease;
+  display: grid;
+  grid: "A" 10vh "B" 90vh;
 }
-* .check::before {
+body main {
+  margin: 2vw;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 2vw;
+}
+body main section.card-input {
+  flex: 5 1 820px;
+}
+body main section.card-output {
+  flex: 2 1 360px;
+}
+
+.check {
+  width: 50px;
+}
+.check::before {
   content: "";
   position: absolute;
   width: 50px;
@@ -83,7 +83,7 @@
   border-radius: 25px;
   transition: all 0.5s ease;
 }
-* .check::after {
+.check::after {
   content: "";
   position: absolute;
   width: 28px;
@@ -94,11 +94,11 @@
   box-sizing: border-box;
   transition: 0.5s ease all;
 }
-* .check:checked::after {
+.check:checked::after {
   transform: translateX(25px);
   border: 2px solid rgb(70, 130, 255);
 }
-* .check:checked::before {
+.check:checked::before {
   background: rgb(70, 130, 255);
 }
 
@@ -164,30 +164,36 @@ header .logo span {
   font-size: 1.2rem;
   color: var(--header-text);
 }
-header .accessibility {
-  display: flex;
-  gap: 4rem;
-}
-header .accessibility button:hover {
+header button:hover {
   color: var(--white);
   background-color: var(--black);
   transition: all 0.5s ease;
 }
+header .accessibility {
+  display: flex;
+  gap: 4rem;
+}
+@media screen and (max-width: 820px) {
+  header .accessibility {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    flex-direction: column;
+    gap: 2ch;
+    padding: 1ch;
+  }
+}
 header .accessibility .darkmode {
-  display: grid;
-  justify-items: start;
-  align-items: center;
-  grid: "A B C"/1fr 1fr 1fr;
-  transform: translateX(-50%);
-  width: 230px;
+  display: flex;
+  justify-content: center;
+  gap: 2ch;
 }
 header .accessibility .translate {
-  display: grid;
-  justify-items: start;
-  align-items: center;
-  grid: "A B C"/1fr 1fr 1fr;
-  transform: translateX(-50%);
-  width: 230px;
+  display: flex;
+  justify-content: center;
+  gap: 2ch;
 }
 header .accessibility .darkmode, header .accessibility .translate {
   z-index: 20;
@@ -210,13 +216,6 @@ header .accessibility .bg {
 @media screen and (min-width: 425px) {
   header .logo span {
     display: inline-block;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .encrypter {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 2vw;
   }
 }
 :root {
@@ -249,9 +248,10 @@ header .accessibility .bg {
 }
 
 .card-input {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
   gap: 0.5rem;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .card-input.another-class {
   display: grid;
@@ -280,6 +280,8 @@ header .accessibility .bg {
 .card-input .dictionaryWrapper {
   display: flex;
   flex-direction: column;
+  padding: 1ch;
+  font-size: 1rem;
 }
 .card-input .dictionaryWrapper table {
   border: none;
@@ -290,17 +292,26 @@ header .accessibility .bg {
 }
 .card-input .dictionaryWrapper table tr th {
   border-radius: 0.5rem;
+  border: 1px solid lightgrey;
 }
 .card-input .encrypter-buttons {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+.card-input .encrypter-buttons .infoWrapper {
+  width: 100%;
+}
+.card-input .encrypter-buttons .infoWrapper .info {
+  font-size: 0.8em;
 }
 .card-input .encrypter-buttons button {
   border-radius: 0.5rem;
-  padding: 0 2rem;
+  padding: 0.5ch 2rem;
   margin: 0 auto;
   width: 100%;
+  flex: 1;
   color: var(--button-color);
   font-size: 2rem;
   font-weight: 400;
@@ -361,16 +372,16 @@ header .accessibility .bg {
 .card-output img {
   width: 100%;
 }
+@media screen and (min-width: calc(6vw + 1181px)) {
+  .card-output img {
+    display: block;
+  }
+}
 .card-output textarea {
   background-color: var(--white);
   color: var(--black);
 }
 
-@media screen and (min-width: 1024px) {
-  .card-output img {
-    display: block;
-  }
-}
 #popUpDictionary {
   margin: auto;
   padding: 2rem;
@@ -382,6 +393,8 @@ header .accessibility .bg {
   display: flex;
   justify-content: center;
   gap: 0.2rem;
+  align-items: center;
+  padding: 1ch 0;
 }
 #popUpDictionary .popUpText img {
   height: 1.5rem;
@@ -399,6 +412,7 @@ header .accessibility .bg {
   width: 100%;
   background-color: var(--white);
   color: var(--black);
+  padding: 1ch;
 }
 #popUpDictionary .popUpButtons {
   display: flex;

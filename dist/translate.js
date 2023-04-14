@@ -1,29 +1,33 @@
-import { lang, getLanguage } from './constants.js';
 import { words } from './language.js';
+const langs = ["es", "en"];
 const changeLangBtn = document.querySelector('input#tslChecking');
 function insertLangText(content, language) {
-    if (content.type === 'placeholder') {
-        const element = document.querySelector(`[data-lang="${content.data}"]`);
-        element.placeholder = language === lang.es ? content.es : content.en;
+    const { type, data, en, es } = content;
+    if (type === 'placeholder') {
+        const element = document.querySelector(`[data-lang="${data}"]`);
+        element.placeholder = language === "es" ? es : en;
     }
-    else if (content.type === 'inner') {
-        const element = document.querySelector(`[data-lang="${content.data}"]`);
-        element.innerText = language === lang.es ? content.es : content.en;
+    else if (type === 'inner') {
+        const element = document.querySelector(`[data-lang="${data}"]`);
+        element.innerText = language === "es" ? es : en;
     }
 }
-function reloadLang(la) {
+function reloadLang(language) {
     Object.keys(words).forEach(key => {
-        insertLangText(words[key], la);
+        insertLangText(words[key], language);
     });
 }
 function changeLang(value) {
-    const langChange = value ? lang.es : lang.en;
+    const langChange = value ? "en" : "es";
     localStorage.setItem('lang', langChange);
     reloadLang(langChange);
 }
 (function () {
-    const currentLang = getLanguage();
-    changeLangBtn.checked = currentLang !== lang.en;
-    reloadLang(currentLang);
+    const currentLang = document.documentElement.lang;
+    changeLangBtn.checked = currentLang === "en";
+    if (changeLangBtn.checked &&
+        langs.includes(currentLang)) {
+        reloadLang(currentLang);
+    }
 })();
 changeLangBtn.addEventListener('change', () => changeLang(changeLangBtn.checked));
