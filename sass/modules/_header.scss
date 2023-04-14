@@ -32,29 +32,22 @@ header{
                 transition: all .5s ease;
             }
         }
-        .darkmode{
-            display: grid;
-            justify-items: start;
-            align-items: center;
-            grid: "A B C"/1fr 1fr 1fr;
-            transform: translateX(-50%);
-            position: fixed;
-            left: 50%;
-            bottom: 6%;
-            width: 230px;
-
-        }
-        .translate{
-            display: grid;
-            justify-items: start;
-            align-items: center;
-            grid: "A B C"/1fr 1fr 1fr;
-            transform: translateX(-50%);
-            left: 50%;
-            position: fixed;
-            bottom: 2%;
-            width: 230px;
-        }
+		.darkmode{
+			display: grid;
+			justify-items: start;
+			align-items: center;
+			grid: "A B C"/1fr 1fr 1fr;
+			transform: translateX(-50%);
+			width: 230px;
+		}
+		.translate{
+			display: grid;
+			justify-items: start;
+			align-items: center;
+			grid: "A B C"/1fr 1fr 1fr;
+			transform: translateX(-50%);
+			width: 230px;
+		}
         .darkmode,.translate{
             z-index: 20;
             span{

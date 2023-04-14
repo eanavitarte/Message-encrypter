@@ -9,36 +9,44 @@
     }
     textarea {
         appearance: none;
+
         border: none;
+        border-radius: 6px;
+
+        padding: 1ch;
+
         resize: none;
         outline: none;
-        background-color: transparent;
+        background: darkcyan;
         font-family: inherit;
         font-size: inherit;
-        color: inherit;
+        color: white;
 
         overflow: scroll;
-        overflow-x: auto; /* Habilita el scroll horizontal */
-        overflow-y: auto; /* Habilita el scroll vertical */
-
+        overflow-x: auto;
+        overflow-y: scroll;
 
         width: 100%;
         &::placeholder{
-            color: var(--alura-color);
+            color: white;
             transition: all 1s ease;
             font-size: 2rem;
         }
     }
-    table{
-        border:none;
-        tr{
-            border: 2px #000 solid;
-            border-radius: .5rem;
-            th{
-                border-radius: .5rem;
-            }
-        }
-    }
+	.dictionaryWrapper {
+		display: flex;
+		flex-direction: column;
+		table{
+			border:none;
+			tr{
+				border: 2px #000 solid;
+				border-radius: .5rem;
+				th{
+					border-radius: .5rem;
+				}
+			}
+		}
+	}
     .encrypter-buttons{
         display: flex;
         flex-direction: column;
