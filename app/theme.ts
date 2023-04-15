@@ -1,25 +1,30 @@
-import { getTheme, theme } from "./constants.js";
 
-// Theme Actions
+const themes = ["light", "dark"] as const
+type Theme = typeof themes[number]
 
 const themeBtn = document.querySelector('input#DLChecking') as HTMLInputElement
 const body = document.querySelector('body') as HTMLBodyElement
 
-function reloadTheme(themeSelect: theme){
-    if(themeSelect === theme.dark) body.setAttribute('data-theme', 'ligth')
-    else body.setAttribute('data-theme', 'dark')
+function reloadTheme(themeSelect: Theme){
+	if(themeSelect === "dark") body.setAttribute('data-theme', "dark")
+	else body.setAttribute('data-theme', "light")
 }
 
 function changeTheme(value: boolean) {
-    const themeSelect = value ? theme.light : theme.dark
-    localStorage.setItem('theme', themeSelect)
-    reloadTheme(themeSelect)
+	const themeSelect = value ? "dark" : "light"
+	localStorage.setItem("theme", themeSelect)
+	reloadTheme(themeSelect)
 }
 
 (function (){
-    const currentLang = getTheme()
-    themeBtn.checked = currentLang !== theme.dark
-    reloadTheme(currentLang)
+	const currentTheme = (localStorage.getItem('theme') ?? document.documentElement.dataset.theme ?? "light") as Theme
+	themeBtn.checked = currentTheme === "dark"
+	if (
+		themeBtn.checked &&
+		themes.includes(currentTheme)
+	) {
+		reloadTheme(currentTheme)
+	}
 })()
 
 themeBtn.addEventListener('change', () => changeTheme(themeBtn.checked))

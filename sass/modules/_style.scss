@@ -34,17 +34,26 @@
 body {
 	background-color: var(--primary-color);
 	color: var(--black);
-	transition: all 2s ease;
+	transition: all .6s ease;
 	display: grid;
 	grid: "A" 10vh
 		"B" 90vh;
+
+	@media screen and (max-width: $ipad-width) {
+		grid: "A" 10vh
+			  "B" 78vh;
+	}
 	
 	main {
 		margin: 2vw;
-    flex-wrap: wrap;
-    display: flex;
-		
+		flex-wrap: wrap;
+		display: flex;
+			
 		gap: 2vw;
+
+		@media screen and (max-width: $ipad-width) {
+			overflow-y: scroll;
+		}
 
 		section.card-input {
 			flex: 5 1 820px;

@@ -5,7 +5,7 @@ header{
         width: 1.5rem;
         filter: var(--header-img);
     }
-    transition: all 2s ease;
+    // transition: all 2s ease;
     font-size: 1rem;
     background-color: var(--header-color);
     color:var(--header-color);
@@ -33,7 +33,7 @@ header{
         display: flex;
         gap: 4rem;
 
-		@media screen and (max-width:820px) {
+		@media screen and (max-width: $ipad-width) {
 			position: fixed;
 			left: 0;
 			bottom: 0;
@@ -42,6 +42,7 @@ header{
 			flex-direction: column;
 			gap: 2ch;
 			padding: 1ch;
+            height: 12vh;
 		}
 
 		.darkmode{
@@ -72,7 +73,7 @@ header{
             width: 100vw;
             height: 12vh;
             background-color: var(--accessibility-color);
-            transition: all .5s ease;
+            // transition: all .5s ease;
             z-index: 10;
         }
     }

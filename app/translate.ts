@@ -27,11 +27,12 @@ function reloadLang(language: Lang){
 function changeLang(value: boolean){
     const langChange = value ? "en" : "es"
     localStorage.setItem('lang', langChange)
+    document.documentElement.lang = langChange
     reloadLang(langChange)
 }
 
 (function (){
-	const currentLang = document.documentElement.lang as Lang
+	const currentLang = (localStorage.getItem("lang") ?? document.documentElement.lang) as Lang
 	changeLangBtn.checked = currentLang === "en"
 	if (
         changeLangBtn.checked &&

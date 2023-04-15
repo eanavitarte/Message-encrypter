@@ -1,21 +1,24 @@
-import { getTheme, theme } from "./constants.js";
-// Theme Actions
+"use strict";
+const themes = ["light", "dark"];
 const themeBtn = document.querySelector('input#DLChecking');
 const body = document.querySelector('body');
 function reloadTheme(themeSelect) {
-    if (themeSelect === theme.dark)
-        body.setAttribute('data-theme', 'ligth');
+    if (themeSelect === "dark")
+        body.setAttribute('data-theme', "dark");
     else
-        body.setAttribute('data-theme', 'dark');
+        body.setAttribute('data-theme', "light");
 }
 function changeTheme(value) {
-    const themeSelect = value ? theme.light : theme.dark;
-    localStorage.setItem('theme', themeSelect);
+    const themeSelect = value ? "dark" : "light";
+    localStorage.setItem("theme", themeSelect);
     reloadTheme(themeSelect);
 }
 (function () {
-    const currentLang = getTheme();
-    themeBtn.checked = currentLang !== theme.dark;
-    reloadTheme(currentLang);
+    const currentTheme = (localStorage.getItem('theme') ?? document.documentElement.dataset.theme ?? "light");
+    themeBtn.checked = currentTheme === "dark";
+    if (themeBtn.checked &&
+        themes.includes(currentTheme)) {
+        reloadTheme(currentTheme);
+    }
 })();
 themeBtn.addEventListener('change', () => changeTheme(themeBtn.checked));
